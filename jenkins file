@@ -1,0 +1,11 @@
+node
+{
+    stage('clone/checkout')
+    {
+        git branch:'master',url:'https://github.com/asravanthip/static-website-example.git'
+    }
+    stage('deploy application in to web server')
+    {
+        sh'cp /var/lib/jenkins/workspace/scripted-application/index.html /var/www/html'
+    }
+}
